@@ -1,0 +1,14 @@
+node_modules/
+chart.js
+connectDB.js
+dailyData.js
+index.html
+dashboard.html
+finale.css
+dashboard_5Alive.html
+dashboard_Zabira.html
+script.js
+server.js
+serverChart.js
+serverGraph.js
+styles.css

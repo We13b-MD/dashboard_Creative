@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power BI Report</title>
+  <style>
+    /* Responsive Container */
+    .responsive-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden; /* Hide footer */
+    }
+
+    /* Responsive iframe */
+    .responsive-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 105%; /* Hide footer */
+      border: none;
+    }
+  </style>
+   <script>
+  // When user tries to access a protected page, check token validity
+function checkLogin() {
+    const token = localStorage.getItem('auth_token');
+    if (!token || isTokenExpired()) {
+        // If no token or token is expired, redirect to login page
+        window.location.href = 'index.html';
+    }
+}
+
+// Call this function on protected pages (e.g., dashboard)
+checkLogin();
+</script>
+</head>
+<body>
+  <h1>Fanta</h1>
+  <div class="responsive-container">
+    <iframe 
+      src="https://app.powerbi.com/view?r=eyJrIjoiYjkyYWFmZjgtNDhlOC00MTljLWE0MWQtMGIxNjRkMjYzNzNhIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9&filterPaneEnabled=false&navContentPaneEnabled=false" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</body>
+</html>
